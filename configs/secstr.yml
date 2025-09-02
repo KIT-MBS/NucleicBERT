@@ -1,0 +1,40 @@
+logging_config:
+  project: secstr
+  name: run1
+  save_dir: ../logs_test/
+model_config:
+  dropout: 0.1
+  hidden_size: 1024
+  max_length: 1024
+  num_attention_heads: 32
+  num_hidden_layers: 32
+  vocab_size: 25
+  position_embedding: 'learned'
+run_config:
+  batch_size: 2
+  frozen: False
+  lr: 1.0e-05
+  num_workers: 12
+  pretrained_path: weights/pretrained.pt
+  max_epochs: 100
+  use_scheduler: False
+  weight_decay: 0.0
+  data_split_ratio: 0.8
+  tokenizer_file: nucleicbert/tokenizers/noncoding_seqs.json
+  logger_type: 'wandb'
+  internal_logs_freq: 1
+  ckpt_dir: ../logs_test/lightning_logs/
+train_data_config:
+  input_dir: ../data/sec_str_data/train/train.csv
+  max_length: 600
+  min_length: 20
+val_data_config:
+  input_dir: ../data/sec_str_data/bpRNA_80/sec_str_vl0.csv
+  max_length: 600
+  min_length: 20
+trainer_config:
+  accelerator: gpu
+  devices: 1
+  num_nodes: 1
+  log_every_n_steps: 1000
+  strategy: ddp_find_unused_parameters_true

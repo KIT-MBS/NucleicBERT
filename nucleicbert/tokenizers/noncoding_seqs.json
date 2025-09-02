@@ -1,0 +1,103 @@
+{
+  "version": "1.0",
+  "truncation": null,
+  "padding": null,
+  "added_tokens": [
+    {
+      "id": 0,
+      "content": "[PAD]",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 1,
+      "content": "[UNK]",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 2,
+      "content": "[MASK]",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 3,
+      "content": "[CLS]",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    },
+    {
+      "id": 4,
+      "content": "[SEP]",
+      "single_word": false,
+      "lstrip": false,
+      "rstrip": false,
+      "normalized": false,
+      "special": true
+    }
+  ],
+  "normalizer": {
+    "type": "Lowercase"
+  },
+  "pre_tokenizer": {
+    "type": "Split",
+    "pattern": {
+      "Regex": "[a-zA-Z]{1}"
+    },
+    "behavior": "Isolated",
+    "invert": false
+  },
+  "post_processor": null,
+  "decoder": null,
+  "model": {
+    "type": "BPE",
+    "dropout": null,
+    "unk_token": null,
+    "continuing_subword_prefix": null,
+    "end_of_word_suffix": null,
+    "fuse_unk": false,
+    "byte_fallback": false,
+    "ignore_merges": false,
+    "vocab": {
+      "[PAD]": 0,
+      "[UNK]": 1,
+      "[MASK]": 2,
+      "[CLS]": 3,
+      "[SEP]": 4,
+      "\n": 5,
+      "a": 6,
+      "b": 7,
+      "c": 8,
+      "d": 9,
+      "f": 10,
+      "g": 11,
+      "h": 12,
+      "i": 13,
+      "k": 14,
+      "m": 15,
+      "n": 16,
+      "r": 17,
+      "s": 18,
+      "t": 19,
+      "u": 20,
+      "v": 21,
+      "w": 22,
+      "x": 23,
+      "y": 24
+    },
+    "merges": []
+  }
+}

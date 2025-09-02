@@ -1,0 +1,5 @@
+/__pycache__/
+/nucleicbert/__pycache__/
+/nucleicbert/.ipynb_checkpoints/
+/.ipynb_checkpoints/
+weights/

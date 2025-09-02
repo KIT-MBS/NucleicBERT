@@ -1,0 +1,33 @@
+# Core ML/DL libraries
+torch>=1.9.0
+pytorch-lightning>=1.5.0
+transformers>=4.10.0
+torchmetrics>=0.6.0
+torchinfo>=1.5.0
+
+# Data manipulation and analysis
+numpy>=1.19.0
+pandas>=1.3.0
+scipy>=1.7.0
+
+# Visualization
+matplotlib>=3.3.0
+seaborn>=0.11.0
+plotly>=5.0.0
+
+# Progress tracking and logging
+tqdm>=4.62.0
+wandb>=0.12.0
+tensorboard>=2.6.0
+mlflow>=1.20.0
+
+# Scientific computing
+scikit-learn>=1.0.0
+phate>=1.0.7
+
+# Development and utilities
+pyyaml>=5.4.0
+argparse
+pathlib
+glob2
+typing-extensions

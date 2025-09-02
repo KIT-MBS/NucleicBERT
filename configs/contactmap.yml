@@ -1,0 +1,53 @@
+logging_config:
+  project: contactmap
+  name: run1
+  save_dir: ../logs_test/
+model_config:
+  dropout: 0.1
+  hidden_size: 1024
+  max_length: 1024
+  num_attention_heads: 32
+  num_hidden_layers: 32
+  vocab_size: 25
+  position_embedding: 'learned'
+  downstream_first_layer_out_dim: 512
+  downstream_n_layers: 1
+  downstream_model: 'ResidualNetwork2D'
+  loss_type: 'focal_loss'
+run_config:
+  batch_size: 1
+  frozen: False
+  lr: 1.0e-06
+  num_workers: 24
+  pretrained_path: weights/pretrained.pt
+  max_epochs: 10
+  use_scheduler: False
+  weight_decay: 0.0
+  internal_log_frequency: 10
+  alpha_focal_loss: 0.8
+  data_split_ratio: 0.8
+  tokenizer_file: nucleicbert/tokenizers/noncoding_seqs.json
+  logger_type: 'wandb'
+  class_weights: null
+  remove_backbone_width: 0
+  distance_threshold: 8.0
+  task: 'contact_map'
+  ckpt_dir: ../logs_test/lightning_logs/
+train_data_config:
+  input_dir: ../data/ns_bgsu_contact_map/train/inputs/
+  max_length: 512
+  min_length: 20
+  target_dir: ../data/ns_bgsu_contact_map/train/targets/
+val_data_config:
+  input_dir: ../data/ns_bgsu_contact_map/val/inputs/
+  max_length: 512
+  min_length: 20
+  target_dir: ../data/ns_bgsu_contact_map/val/targets/
+trainer_config:
+  accelerator: gpu
+  devices: 1
+  num_nodes: 1
+  log_every_n_steps: 100
+  strategy: 'ddp_find_unused_parameters_true'
+  gradient_clip_val: 1.0
+  gradient_clip_algorithm: 'norm'
