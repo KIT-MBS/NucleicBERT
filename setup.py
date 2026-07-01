@@ -7,9 +7,9 @@ with open('requirements.txt') as f:
 
 setup(
     name='nucleicbert',
-    version='0.1.0-alpha',
+    version='1.0.0',
     author='NucleicBERT Team',
-    author_email='nucleicbert@example.com',
+    author_email='u.upadhyay@fz-juelich.de',
     description='Language model for RNA sequences',
     long_description=open('docs/README.md').read(),
     long_description_content_type='text/markdown',
@@ -21,7 +21,7 @@ setup(
         ],
     },
     classifiers=[
-        'License :: OSI Approved :: MIT License',
+        'License :: OSI Approved :: Apache-2.0 License',
         'Operating System :: POSIX',  # For Unix-based systems
         'Operating System :: POSIX :: Linux',  # Specifically for Linux
         'Operating System :: MacOS :: MacOS X',  # Specifically for macOS
